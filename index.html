@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d14">
+  <meta name="description" content="LifeOS RPG — Level up your life, one quest at a time.">
+  <title>LifeOS RPG — Level Up Your Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">L<span>+</span></div><div><strong>LifeOS <em>RPG</em></strong><small>PERSONAL PROGRESSION</small></div></div>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">◈</span> Dashboard</button>
+        <button class="nav-item" data-view="quests"><span class="nav-icon">✦</span> Quests <span class="nav-count" id="navQuestCount">0</span></button>
+        <button class="nav-item" data-view="skills"><span class="nav-icon">⌘</span> Skill Tree</button>
+        <button class="nav-item" data-view="achievements"><span class="nav-icon">♜</span> Achievements</button>
+        <button class="nav-item" data-view="analytics"><span class="nav-icon">⌁</span> Analytics</button>
+        <button class="nav-item" data-view="journal"><span class="nav-icon">▤</span> Journal</button>
+      </nav>
+      <div class="side-bottom">
+        <div class="side-label">PERSONALIZE</div>
+        <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span> Settings</button>
+        <div class="sidebar-player"><div class="avatar" id="sideAvatar">N</div><div class="player-mini"><strong id="sideName">Adventurer</strong><small id="sideLevel">Level 1 · Novice</small></div><button class="icon-button" id="profileShortcut" aria-label="Open settings">⋯</button></div>
+        <div class="sidebar-footer"><span class="online-dot"></span> YOUR JOURNEY, YOUR RULES</div>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <div class="breadcrumb"><span>LifeOS</span><b>/</b><strong id="viewLabel">Dashboard</strong></div>
+        <div class="top-actions"><div class="date-chip" id="todayDate"></div><button class="icon-button" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">☼</button><button class="icon-button notification-button" id="notificationButton" aria-label="Notifications">♧<i id="notificationDot"></i></button><button class="top-avatar" id="topAvatar" title="Open settings">N</button></div>
+      </header>
+      <section id="appView" class="view-content" tabindex="-1"></section>
+      <footer class="app-footer"><span>LifeOS RPG <b>•</b> Build your better self.</span><span>All progress saved locally <span class="save-dot"></span></span></footer>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><div><span class="eyebrow" id="modalEyebrow">YOUR NEXT MOVE</span><h2 id="modalTitle">Create a quest</h2></div><button class="icon-button" id="modalClose" aria-label="Close dialog">×</button></div><div id="modalBody"></div></section></div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script src="js/storage.js"></script>
+  <script src="js/progression.js"></script>
+  <script src="js/streaks.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/quests.js"></script>
+  <script src="js/skill-tree.js"></script>
+  <script src="js/journal.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
